@@ -94,22 +94,9 @@ def find_all_ORFs_oneframe(dna):
     >>> find_all_ORFs_oneframe("ATGCATGAATGTAGATAGATGTGCCC")
     ['ATGCATGAATGTAGA', 'ATGTGCCC']
     """
-    '''stuff = dna
-    sequences = []
-    cur = rest_of_ORF(stuff)
-    while(cur != ''):
-        sequences.append(cur)
-        pos = stuff.find(cur)
-        stuff = stuff[pos+len(cur):]
-        cur = rest_of_ORF(stuff)
-    return sequences'''
+
     sequences = []
     temp = dna
-    '''for x in range(3, len(dna), 3):
-        if(dna[x-3:x] == 'ATG'):
-            cur = rest_of_ORF(dna[x-3:])
-            sequences.append(cur)
-            x += len(cur)'''
     while(len(temp) > 2):
         if(temp[:3] == 'ATG'):
             cur = rest_of_ORF(temp)
